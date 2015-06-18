@@ -1,5 +1,8 @@
 <% @posts.each do |post| %>
-
-  <%= image_tag post.photo.url(:small), class: 'img-rounded' %>
-
+  <div class='staple-display img-rounded'>
+    <%= link_to post.url, target: '_blank' do %>
+      <%= image_tag post.photo.url(:small), class: 'img-rounded' %>
+    <% end %>
+    <%= post.notes %>
+  </div>
 <% end %>

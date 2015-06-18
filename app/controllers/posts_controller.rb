@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def create
     # TODO Not validating presence
     @post = Post.new post_params
-    if @post.save!
+    if @post.save
       redirect_to root_path, notice: 'success'
     else
       flash.now[:alert] = 'you have failed to achieve victory'
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:photo)
+      params.require(:post).permit(:photo, :url, :notes)
     end
 
 end

@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
   belongs_to :user
 
-  validates_presence_of :photo
+  validates :photo, :url, presence: true
+  #TODO validate url is link
 
 end
