@@ -1,25 +1,21 @@
 class PostsController < ApplicationController
 
+  before_action :new_post, only: [:index]
+
   def index
     @posts = Post.all
   end
 
-  def new
-    @post = Post.new
-  end
-
   def create
-    # TODO Not validating presence
     @post = Post.new post_params
-    if @post.save
-      redirect_to root_path, notice: 'success'
-    else
-      flash.now[:alert] = 'you have failed to achieve victory'
-      render :new
-    end
+    @post.save
   end
 
   private
+
+    def new_post
+      @post = Post.new
+    end
 
     def post_params
       params.require(:post).permit(:photo, :url, :notes)

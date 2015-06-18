@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionHelper
 
+  def new_post
+    @post = Post.new
+  end
+
 end

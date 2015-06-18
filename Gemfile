@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'remotipart', '~> 1.2'
 
 group :development, :test do
   gem 'byebug'

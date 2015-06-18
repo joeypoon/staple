@@ -1,0 +1,4 @@
+$('#new-staple-form').modal('hide');
+
+<% @posts = Post.all %>
+$('#post-list').html("<%= j render 'posts/show_posts' %>");
