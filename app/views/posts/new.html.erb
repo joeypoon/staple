@@ -1,0 +1,8 @@
+<div class="col-md-6 col-md-offset-3 margin-top">
+  <%= simple_form_for @post, url: staples_path do |f| %>
+
+    <%= f.input :photo, class: 'form-group', label_html: { style: 'font-size: 1.9em; letter-spacing: .01em;' }, input_html: { class: 'form-control' } %>
+    <%= f.submit 'Staple It', class: 'btn btn-primary btn-block' %>
+
+  <% end %>
+</div>

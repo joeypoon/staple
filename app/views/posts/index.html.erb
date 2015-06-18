@@ -1,0 +1,5 @@
+<% @posts.each do |post| %>
+
+  <%= image_tag post.photo.url(:small), class: 'img-rounded' %>
+
+<% end %>

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
+  root 'posts#index'
+
+  get 'staples/new' => 'posts#new', as: :new_staple
+
+  post 'staples' => 'posts#create'
 
   # users
 
