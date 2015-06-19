@@ -1,7 +1,10 @@
 var username = '<%= j @user.username %>';
 var recentStaples = '<%= j render 'users/show_user' %>'
 
+$('#show-post-detail').modal('hide');
+
 $('#user-show-modal .modal-title').html(username);
 $('#user-show-modal .modal-body').html(recentStaples);
 
 $('#user-show-modal').modal('show');
+$('body').addClass('modal-open');

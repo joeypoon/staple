@@ -2,7 +2,7 @@
   <% @posts.each do |post| %>
     <li class="list-item">
       <div class='staple-display img-rounded well'>
-        <%= link_to staple_modal_path(post), remote: true do %>
+        <%= link_to staple_modal_path(post.id), remote: true do %>
           <%= image_tag post.photo.url(:small), class: 'img-rounded' %>
         <% end %>
         <p><%= link_to post.user.username, post.user, remote: true %> <%= time_ago_in_words post.created_at %> ago</p>

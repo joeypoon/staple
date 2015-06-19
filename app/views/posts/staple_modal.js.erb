@@ -1,4 +1,2 @@
-$('#show-post-detail .modal-title').html('<%= @post.url %>');
-$('#show-post-detail .staple-photo').html('<%= j image_tag @post.photo.url(:small), class: 'img-responsive img-rounded' %>');
-$('#show-post-detail .modal-body').html('<%= @post.notes %>');
+$('#show-post-detail .modal-dialog').html('<%= j render partial: 'posts/show_post', locals: { post: @post } %>');
 $('#show-post-detail').modal('show');
