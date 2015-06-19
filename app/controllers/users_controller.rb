@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:show]
   before_action :new_post
 
   def new
@@ -19,7 +18,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @posts = @user.posts.order('created_at desc').page(params[:page])
+    set_user
+    @posts = @user.posts.order('created_at desc').take(4)
   end
 
   def update
