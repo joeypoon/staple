@@ -1,0 +1,11 @@
+<% if current_user.errors.none? %>
+
+  $('#me-edit-form').modal('hide');
+  alert('yay')
+
+<% else %>
+$('#me-edit-form').modal('hide');
+
+  alert('boo');
+
+<% end %>

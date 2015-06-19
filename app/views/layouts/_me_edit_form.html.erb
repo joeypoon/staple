@@ -1,0 +1,8 @@
+<%= simple_form_for current_user, url: me_path, remote: true do |f| %>
+
+  <%= f.input :username, required: true %>
+  <%= f.input :email, disabled: true %>
+  <%= f.input :password, required: true %>
+  <%= f.submit 'Save', class: 'btn btn-primary btn-block' %>
+
+<% end %>

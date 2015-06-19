@@ -22,6 +22,10 @@ class UsersController < ApplicationController
     @posts = @user.posts.order('created_at desc').page(params[:page])
   end
 
+  def update
+    current_user.update user_params
+  end
+
   private
 
     def set_user

@@ -2,7 +2,7 @@
   <% @posts.each do |post| %>
     <li class="list-item">
       <div class='staple-display img-rounded well'>
-        <%= link_to post.url, target: '_blank' do %>
+        <%= link_to staple_modal_path(post), remote: true do %>
           <%= image_tag post.photo.url(:small), class: 'img-rounded' %>
         <% end %>
         <p><%= link_to post.user.username, post.user %> <%= time_ago_in_words post.created_at %> ago</p>
@@ -13,3 +13,21 @@
 </ul>
 
 <%= paginate @posts %>
+
+<div class="modal fade" id="show-post-detail">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="staple-photo">
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

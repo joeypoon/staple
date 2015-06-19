@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  # posts
+
+  get 'staples/:id' => 'posts#staple_modal', as: :staple_modal
+
   post 'staples' => 'posts#create'
 
   # users
@@ -9,6 +13,8 @@ Rails.application.routes.draw do
   get 'users/new' => 'users#new', as: :new_user
 
   get 'users/:id' => 'users#show', as: :user
+
+  patch 'me' => 'users#update'
 
   post 'users' => 'users#create'
 

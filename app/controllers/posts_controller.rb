@@ -12,6 +12,10 @@ class PostsController < ApplicationController
     @post.save
   end
 
+  def staple_modal
+    @post = Post.find params[:id]
+  end
+
   private
 
     def new_post
