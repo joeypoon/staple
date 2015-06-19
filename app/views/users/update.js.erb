@@ -1,11 +1,5 @@
-<% if current_user.errors.none? %>
+var newLink = '<%= j link_to "#{current_user.username}", '#', 'data-target': '#me-edit-form', 'data-toggle': 'modal' %>'
 
-  $('#me-edit-form').modal('hide');
-  alert('yay')
-
-<% else %>
 $('#me-edit-form').modal('hide');
-
-  alert('boo');
-
-<% end %>
+$('.main-alert .alert-success').html('Success');
+$('#me-edit-link').html(newLink)

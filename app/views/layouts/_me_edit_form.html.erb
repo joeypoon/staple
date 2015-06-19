@@ -1,3 +1,9 @@
+<% if alert %>
+
+  <div class="alert alert-danger"><%= alert %></div>
+
+<% end %>
+
 <%= simple_form_for current_user, url: me_path, remote: true do |f| %>
 
   <%= f.input :username, required: true %>
