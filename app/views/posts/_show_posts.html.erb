@@ -1,9 +1,15 @@
-<% @posts.each do |post| %>
-  <div class='staple-display img-rounded well pull-left'>
-    <%= link_to post.url, target: '_blank' do %>
-      <%= image_tag post.photo.url(:small), class: 'img-rounded' %>
-    <% end %>
-    <p><%= link_to post.user.username, post.user %> <%= time_ago_in_words post.created_at %> ago</p>
-    <%= post.notes %>
-  </div>
-<% end %>
+<ul class="list-inline">
+  <% @posts.each do |post| %>
+    <li class="list-item">
+      <div class='staple-display img-rounded well'>
+        <%= link_to post.url, target: '_blank' do %>
+          <%= image_tag post.photo.url(:small), class: 'img-rounded' %>
+        <% end %>
+        <p><%= link_to post.user.username, post.user %> <%= time_ago_in_words post.created_at %> ago</p>
+        <p><%= post.notes %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<%= paginate @posts %>

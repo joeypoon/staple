@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'remotipart', '~> 1.2'
 gem 'faker'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug'
