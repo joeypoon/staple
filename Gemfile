@@ -16,6 +16,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'remotipart', '~> 1.2'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'
