@@ -1,0 +1,3 @@
+$('#modal .modal-title').html('<%= j current_user.username %>');
+$('#modal .modal-body').html('<%= j render 'users/me_edit_form' %>');
+$('#modal').modal('show');

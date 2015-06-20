@@ -25,10 +25,14 @@ class UsersController < ApplicationController
   def update
     if current_user.authenticate(user_params[:password])
       current_user.update user_params
+      flash.now[:notice] = 'Success'
     else
       flash.now[:alert] = 'Invalid password'
       render 'users/fail_update.js'
     end
+  end
+
+  def me_edit
   end
 
   private

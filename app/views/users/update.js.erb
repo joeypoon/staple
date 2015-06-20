@@ -1,5 +1,3 @@
-var newLink = '<%= j link_to "#{current_user.username}", '#', 'data-target': '#me-edit-form', 'data-toggle': 'modal' %>'
-
-$('#me-edit-form').modal('hide');
-$('.main-alert .alert-success').html('Success');
-$('#me-edit-link').html(newLink)
+$('#modal').modal('hide');
+$('.main-alert').html('<%= j render 'layouts/alerts' %>')
+$('#me-edit-link a').html('<%= j current_user.username %>')
