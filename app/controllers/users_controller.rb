@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       flash.now[:notice] = 'Success'
     else
       flash.now[:alert] = 'Invalid password'
-      render 'users/fail_update.js'
+      render 'users/fail_update'
     end
   end
 

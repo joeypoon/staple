@@ -1,4 +1,6 @@
-<%= simple_form_for :session, url: login_path do |f| %>
+<%= render 'layouts/alerts' %>
+
+<%= simple_form_for :session, url: login_path, remote: true do |f| %>
 
   <%= f.input :email %>
   <%= f.input :password %>

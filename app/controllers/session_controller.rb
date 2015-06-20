@@ -6,12 +6,12 @@ class SessionController < ApplicationController
   end
 
   def create
-    user = User.find_by email: session_params[:email]
-    if user && user.authenticate(session_params[:password])
-      session[:user_id] = user.id
-      redirect_to root_path, notice: 'Successfully logged in'
+    @user = User.find_by email: session_params[:email]
+    if @user && @user.authenticate(session_params[:password])
+      login @user
     else
-      redirect_to :back, alert: 'you have failed to achieve victory'
+      flash.now[:alert] = 'Invalid email/password combination'
+      render 'session/fail_login'
     end
   end
 
