@@ -7,7 +7,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -33,7 +33,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :large do
-    process :resize_to_fill => [560, 560]
+    process :resize_to_fill => [568, 568]
   end
 
   version :small do

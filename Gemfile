@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem 'carrierwave-aws'
 gem 'mini_magick'
 gem 'remotipart', '~> 1.2'
 gem 'faker'
@@ -24,6 +25,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :production do
