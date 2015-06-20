@@ -16,6 +16,10 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
   end
 
+  def new_staple
+    new_post
+  end
+
   private
 
     def new_post

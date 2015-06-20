@@ -1,13 +1,13 @@
 <% if @post.errors.none? %>
 
-  $('#new-staple-form').modal('hide');
+  $('#modal').modal('hide');
 
-  $("#new-staple-form .modal-body").html('<%= j render 'posts/new_staple_form' %>');
+  $("#modal .modal-body").html('<%= j render 'posts/new_staple_form' %>');
 
   $('#post-list').html("<%= j render 'posts/show_posts' %>");
 
 <% else %>
 
-  $("#new-staple-form .modal-body").html('<%= j render 'posts/new_staple_form' %>');
+  $("#modal .modal-body").html('<%= j render 'posts/new_staple_form' %>');
 
 <% end %>
