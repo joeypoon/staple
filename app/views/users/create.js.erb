@@ -1,0 +1,10 @@
+<% if @user.errors.any? %>
+
+  $('#modal .modal-body').html('<%= j render 'users/new_user_form' %>');
+
+<% else %>
+
+  $('#modal').modal('hide');
+  $('nav').html('<%= j render 'layouts/nav' %>');
+
+<% end %>

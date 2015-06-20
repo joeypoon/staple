@@ -2,6 +2,9 @@ class SessionController < ApplicationController
 
   before_action :new_post
 
+  def new
+  end
+
   def create
     user = User.find_by email: session_params[:email]
     if user && user.authenticate(session_params[:password])

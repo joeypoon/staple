@@ -1,0 +1,8 @@
+<%= simple_form_for :session, url: login_path do |f| %>
+
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.submit 'Login', class: 'btn btn-success btn-block' %>
+  <p>New user? <%= link_to 'Sign Up', new_user_path, remote: true %></p>
+
+<% end %>
