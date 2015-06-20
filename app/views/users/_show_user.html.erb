@@ -1,14 +1,3 @@
-<h4>Recent Staples</h4>
-<ul class="list-inline">
-  <% @posts.each do |post| %>
-    <li class="list-item">
-      <div class='staple-display img-rounded well'>
-        <%= link_to post.url do %>
-          <%= image_tag post.photo.url(:small), class: 'img-rounded' %>
-        <% end %>
-        <p><%= time_ago_in_words post.created_at %> ago</p>
-        <p><%= post.notes %></p>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<%= render 'users/posts_loop' %>
+
+<%= link_to "See more staples from #{@user.username}", @user %>

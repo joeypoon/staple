@@ -19,7 +19,11 @@ class UsersController < ApplicationController
 
   def show
     set_user
-    @posts = @user.posts.order('created_at desc').take(4)
+
+    respond_to do |format|
+      format.js { @posts = @user.posts.order('created_at desc').take(4) }
+      format.html { @posts = @user.posts.order('created_at desc').page(params[:page]) }
+    end
   end
 
   def update

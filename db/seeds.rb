@@ -6,20 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-12.times do
+10.times do
 
   user = User.create(username: Faker::Internet.user_name,
                      email: Faker::Internet.email,
                      password: 'password',
                      password_confirmation: 'password')
 
-  3.times do
+end
 
-    Post.create(url: Faker::Internet.url,
-                remote_photo_url: Faker::Avatar.image,
-                notes: Faker::Lorem.sentence,
-                user_id: user.id)
+36.times do
 
-  end
+  Post.create(url: Faker::Internet.url,
+              remote_photo_url: Faker::Avatar.image,
+              notes: Faker::Hacker.say_something_smart,
+              user_id: User.all.sample.id)
 
 end

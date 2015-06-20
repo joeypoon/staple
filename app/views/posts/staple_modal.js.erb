@@ -1,2 +1,3 @@
-$('#show-post-detail .modal-dialog').html('<%= j render partial: 'posts/show_post', locals: { post: @post } %>');
-$('#show-post-detail').modal('show');
+$('#modal .modal-title').html('<%= j link_to @post.url, @post.url %>')
+$('#modal .modal-body').html('<%= j render partial: 'posts/show_post', locals: { post: @post } %>');
+$('#modal').modal('show');
