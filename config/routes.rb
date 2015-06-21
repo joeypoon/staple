@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   post 'staples' => 'posts#create'
 
+  delete 'posts/:post_id' => 'posts#destroy', as: :destroy_post
+
   # users
 
   get 'users/new' => 'users#new', as: :new_user

@@ -3,3 +3,9 @@
 <% end %>
 <p><%= link_to post.user.username, post.user, remote: true %> <%= time_ago_in_words post.created_at %> ago</p>
 <p><%= post.notes %></p>
+
+<% if post.user == current_user %>
+  <%= link_to destroy_post_path(post_id: @post.id), remote: true, method: :delete do %>
+    <button class='btn btn-danger btn-block' data-dismiss='modal'>Delete</button>
+  <% end %>
+<% end %>

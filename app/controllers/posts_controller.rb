@@ -24,6 +24,12 @@ class PostsController < ApplicationController
     @posts = current_user.posts
   end
 
+  def destroy
+    Post.destroy(params[:post_id])
+    flash.now[:notice] = 'Post deleted'
+    @posts = current_user.posts
+  end
+
   private
 
     def new_post
