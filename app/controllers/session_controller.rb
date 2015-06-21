@@ -10,6 +10,7 @@ class SessionController < ApplicationController
     if @user && @user.authenticate(session_params[:password])
       login @user
       flash.now[:notice] = "Hi #{@user.username}"
+      @posts = Post.all
     else
       flash.now[:alert] = 'Invalid email/password combination'
       render 'session/fail_login'
