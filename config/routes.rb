@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'staples/new' => 'posts#new_staple', as: :new_staple
 
+  get 'posts/me' => 'posts#my_posts', as: :my_posts
+
   get 'staples/:id' => 'posts#staple_modal', as: :staple_modal
 
   post 'staples' => 'posts#create'

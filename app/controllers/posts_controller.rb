@@ -20,6 +20,10 @@ class PostsController < ApplicationController
     new_post
   end
 
+  def my_posts
+    @posts = current_user.posts
+  end
+
   private
 
     def new_post
