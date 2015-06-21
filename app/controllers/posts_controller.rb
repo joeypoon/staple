@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def my_posts
-    @posts = current_user.posts
+    @posts = current_user.posts.sort_by(&:created_at).reverse
   end
 
   def destroy
