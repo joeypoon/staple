@@ -1,20 +1,3 @@
-<div id="post-list">
-  <%= render 'posts/show_posts' %>
-</div>
+<%= render 'posts/show_posts' %>
 
 <%= paginate @posts %>
-
-<div class="modal fade" id="show-post-detail">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"></h4>
-      </div>
-      <div class="staple-photo">
-      </div>
-      <div class="modal-body">
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
