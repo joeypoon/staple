@@ -6,9 +6,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body id='top'>
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <%= render 'layouts/nav' %>
     </nav>
 
@@ -20,6 +20,10 @@
         <%= yield %>
       </div>
     </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom col-xs-4 col-sm-2 col-lg-1">
+      <%= render 'layouts/bottom_nav' %>
+    </nav>
 
     <div class="modal fade" id="modal">
       <div class="modal-dialog">
