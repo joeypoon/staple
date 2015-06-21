@@ -16,7 +16,9 @@
       <div class="main-alert">
         <%= render 'layouts/alerts' %>
       </div>
-      <%= yield %>
+      <div id="content">
+        <%= yield %>
+      </div>
     </div>
 
     <div class="modal fade" id="modal">

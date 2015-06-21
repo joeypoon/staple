@@ -15,11 +15,9 @@ class UsersController < ApplicationController
 
   def show
     set_user
-
-    respond_to do |format|
-      format.js { @posts = @user.posts.order('created_at desc').take(4) }
-      format.html { @posts = @user.posts.order('created_at desc').page(params[:page]) }
-    end
+    @posts = @user.posts
+    @posts += Post.where(id: @user.stapled)
+    @posts = @posts.uniq.sort_by(&:created_at).reverse
   end
 
   def update
@@ -54,6 +52,10 @@ class UsersController < ApplicationController
       flash.now[:alert] = 'Fail'
     end
     render 'users/staple_post'
+  end
+
+  def my_stapled
+    @posts = Post.where(id: current_user.stapled)
   end
 
   private
