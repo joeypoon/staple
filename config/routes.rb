@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   get 'me' => 'users#me_edit', as: :me_edit
 
-  get 'me/staple/:post_id' => 'users#staple_post', as: :staple_post
+  post 'me/staple/:post_id' => 'users#staple_post', as: :staple_post
+
+  post 'me/unstaple/:post_id' => 'users#unstaple_post', as: :unstaple_post
 
   patch 'me' => 'users#update'
 

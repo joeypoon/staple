@@ -45,6 +45,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def unstaple_post
+    @post = Post.find_by id: params[:post_id]
+    current_user.stapled.delete @post.id
+    if current_user.save
+      flash.now[:notice] = 'Unstapled'
+    else
+      flash.now[:alert] = 'Fail'
+    end
+    render 'users/staple_post'
+  end
+
   private
 
     def set_user
