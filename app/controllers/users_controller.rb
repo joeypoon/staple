@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def staple_post
     @post = Post.find_by id: params[:post_id]
     current_user.stapled << @post.id
-    if current_user.save
+    if current_user.save!
       flash.now[:notice] = 'Stapled'
     else
       flash.now[:alert] = 'Fail'
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   def unstaple_post
     @post = Post.find_by id: params[:post_id]
     current_user.stapled.delete @post.id
-    if current_user.save
+    if current_user.save!
       flash.now[:notice] = 'Unstapled'
     else
       flash.now[:alert] = 'Fail'
