@@ -35,6 +35,16 @@ class UsersController < ApplicationController
   def me_edit
   end
 
+  def staple_post
+    @post = Post.find_by id: params[:post_id]
+    current_user.stapled << @post.id
+    if current_user.save
+      flash.now[:notice] = 'Stapled'
+    else
+      flash.now[:alert] = 'Fail'
+    end
+  end
+
   private
 
     def set_user

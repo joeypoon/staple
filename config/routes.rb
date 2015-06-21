@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show', as: :user
 
   get 'me' => 'users#me_edit', as: :me_edit
-  
+
+  get 'me/staple/:post_id' => 'users#staple_post', as: :staple_post
+
   patch 'me' => 'users#update'
 
   post 'users' => 'users#create'
