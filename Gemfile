@@ -20,7 +20,6 @@ gem 'remotipart', '~> 1.2'
 gem 'faker'
 gem 'kaminari'
 gem 'acts-as-taggable-on', '~> 3.4'
-gem 'chosen-rails', '~> 1.4.2'
 
 group :development, :test do
   gem 'byebug'

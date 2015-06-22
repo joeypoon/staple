@@ -1,11 +1,11 @@
 <% if current_user %>
   <% unless current_user.stapled.include? post.id %>
     <%= link_to staple_post_path(post_id: post.id), remote: true, method: :post do %>
-      <button class="btn btn-success">Staple</button>
+      <button class="btn btn-success"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></button>
     <% end %>
   <% else %>
     <%= link_to unstaple_post_path(post_id: post.id), remote: true, method: :post do %>
-      <button class="btn btn-danger">Unstaple</button>
+      <button class="btn btn-danger"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></button>
     <% end %>
   <% end %>
 <% end %>
