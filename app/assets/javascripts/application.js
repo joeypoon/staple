@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap
+//= require chosen-jquery
 //= require jquery_ujs
 //= require jquery.remotipart
 //= require turbolinks

@@ -9,4 +9,12 @@ class Post < ActiveRecord::Base
   validates :url, presence: true, uniqueness: true, format: { with: VALID_URL_REGEX }
   validates :photo, :tag_list, presence: true
 
+  def self.search(search)
+    if (search.present?)
+      where("notes like :search OR url like :search", search: "%#{search}%").all
+    else
+      all
+    end
+  end
+
 end

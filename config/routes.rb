@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'posts/:tag' => 'posts#posts_with_tag', as: :posts_with_tag
 
+  get 'search' => 'posts#search'
+
   post 'staples' => 'posts#create'
 
   delete 'posts/:post_id' => 'posts#destroy', as: :destroy_post

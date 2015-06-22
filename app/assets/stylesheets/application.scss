@@ -2,6 +2,16 @@
 @import 'bootstrap';
 @import 'users';
 @import 'posts';
+@import 'chosen';
+
+html a {
+  color: #18559F !important;
+
+  &:hover,
+  &:visited {
+    text-decoration: none;
+  }
+}
 
 .margin-top {
   margin-top: 4em;
@@ -21,4 +31,62 @@ body .main-alert {
 .navbar-fixed-bottom {
   border-left: 1px solid rgb(217, 220, 222);
   left: auto;
+}
+
+/* navbar */
+.navbar-default {
+    background-color: #F39C12;
+    border-color: #F3C212;
+
+    form input {
+      border: none;
+    }
+
+    button {
+      color: #18559F;
+      border: none;
+
+      &:hover,
+      &:focus {
+        color: #0138B8;
+        background-color: white;
+      }
+    }
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #18559F;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #0138B8;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #18559F;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #0138B8;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #0138B8;
+    background-color: #004DFF;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #0138B8;
+    background-color: #004DFF;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #18559F;
+}
+
+.well {
+  background: lighten(#FFB849, 30%);
+  border: 1px solid #F3C212;
 }

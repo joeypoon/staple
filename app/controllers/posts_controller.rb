@@ -34,6 +34,13 @@ class PostsController < ApplicationController
     @posts = Post.tagged_with(params[:tag])
   end
 
+  def search
+    search_word = params[:search][:search_word]
+    @posts = Post.search(search_word)
+    @posts += Post.tagged_with(search_word)
+    @posts = @posts.sort_by(&:created_at).reverse
+  end
+
   private
 
     def new_post
