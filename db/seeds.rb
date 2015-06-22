@@ -17,8 +17,11 @@ end
 
 36.times do
 
+  tags = ['funny', 'motivational', 'weird', 'recipe', 'smart', 'facts']
+
   Post.create(url: Faker::Internet.url,
               remote_photo_url: Faker::Avatar.image,
+              tag_list: tags.sample,
               notes: Faker::Hacker.say_something_smart,
               user_id: User.all.sample.id)
 

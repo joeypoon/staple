@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'staples/:id' => 'posts#staple_modal', as: :staple_modal
 
+  get 'posts/:tag' => 'posts#posts_with_tag', as: :posts_with_tag
+
   post 'staples' => 'posts#create'
 
   delete 'posts/:post_id' => 'posts#destroy', as: :destroy_post

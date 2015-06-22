@@ -30,6 +30,10 @@ class PostsController < ApplicationController
     @posts = current_user.posts
   end
 
+  def posts_with_tag
+    @posts = Post.tagged_with(params[:tag])
+  end
+
   private
 
     def new_post
