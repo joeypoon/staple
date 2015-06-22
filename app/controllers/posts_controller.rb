@@ -31,13 +31,14 @@ class PostsController < ApplicationController
   end
 
   def posts_with_tag
-    @posts = Post.tagged_with(params[:tag])
+    @posts = Post.tagged_with(params[:tag]).order('created_at desc')
   end
 
   def search
+    #if multiple words, search with and
     search_word = params[:search][:search_word]
     @posts = Post.search(search_word)
-    @posts += Post.tagged_with(search_word)
+    @posts += Post.tagged_with(search_word.split(' '), :wild => true)
     @posts = @posts.sort_by(&:created_at).reverse
   end
 

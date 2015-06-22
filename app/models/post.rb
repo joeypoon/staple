@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
 
   def self.search(search)
     if (search.present?)
-      where("notes like :search OR url like :search", search: "%#{search}%").all
+      where("lower(notes) like :search OR lower(url) like :search", search: "%#{search.downcase}%").all
     else
       all
     end
