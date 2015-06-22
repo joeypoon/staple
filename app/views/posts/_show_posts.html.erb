@@ -6,12 +6,9 @@
           <%= image_tag post.photo.url(:small), class: 'img-rounded img-responsive' %>
         <% end %>
         <p><%= link_to post.user.username, post.user, remote: true %> <%= time_ago_in_words post.created_at %> ago</p>
-        <ul class="list-inline post_tag_list">
-          Tags:
-            <% post.tag_list.each do |tag| %>
-              <li><%= link_to tag, posts_with_tag_path(tag: tag), remote: true %></li>
-            <% end %>
-        </ul>
+        
+        <%= render partial: 'posts/show_tag_list', locals: { post: post } %>
+
         <p><%= post.notes %></p>
         <p class="staple_button">
           <%= render partial: 'posts/staple_button', locals: { post: post } %>
