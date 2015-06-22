@@ -19,6 +19,7 @@ gem 'mini_magick'
 gem 'remotipart', '~> 1.2'
 gem 'faker'
 gem 'kaminari'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development, :test do
   gem 'byebug'
