@@ -4,6 +4,8 @@
 
   $("#modal .modal-body").html('<%= j render 'posts/new_staple_form' %>');
 
+  $('#paginate-posts').html('<%= j render 'posts/paginate_posts' %>');
+
   $('body #content').html("<%= j render 'posts/show_posts' %>");
 
 <% else %>

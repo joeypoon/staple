@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def index
     new_post
-    @posts = Post.all.order('created_at desc').page(params[:page])
+    set_posts
   end
 
   def create
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     end
 
     def set_posts
-      @posts = Post.all.order('created_at desc')
+      @posts = Post.all.order('created_at desc').page(params[:page])
     end
 
     def post_params
