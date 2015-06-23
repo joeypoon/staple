@@ -1,2 +1,3 @@
 $('.main-alert').html('<%= j render 'layouts/alerts' %>');
 $('#post-<%= @post.id %> .staple_button').html('<%= j render partial: 'posts/staple_button', locals: { post: @post } %>');
+$('.modal .staple_button').html('<%= j render partial: 'posts/staple_button', locals: { post: @post } %>');

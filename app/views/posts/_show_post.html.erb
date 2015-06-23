@@ -7,6 +7,15 @@
 
 <p><%= post.notes %></p>
 
+<p>
+  <span class="staple_button">
+    <%= render partial: 'posts/staple_button', locals: { post: post } %>
+  </span>
+  <span class="like_button">
+    <%= render partial: 'posts/like_button', locals: { post: post } %>
+  </span>
+</p>
+
 <% if post.user == current_user %>
   <%= link_to destroy_post_path(post_id: @post.id), remote: true, method: :delete do %>
     <button class='btn btn-danger btn-block' data-dismiss='modal'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>

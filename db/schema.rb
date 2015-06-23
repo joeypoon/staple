@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622183761) do
+ActiveRecord::Schema.define(version: 20150623014301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 20150622183761) do
   create_table "posts", force: :cascade do |t|
     t.string   "photo"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "url"
     t.text     "notes"
+    t.integer  "likes",      default: 0
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150622183761) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "stapled",         default: [],              array: true
+    t.integer  "liked",           default: [],              array: true
   end
 
 end

@@ -6,13 +6,20 @@
           <%= image_tag post.photo.url(:small), class: 'img-rounded img-responsive' %>
         <% end %>
         <p><%= link_to post.user.username, post.user, remote: true %> <%= time_ago_in_words post.created_at %> ago</p>
-        
+
         <%= render partial: 'posts/show_tag_list', locals: { post: post } %>
 
         <p><%= post.notes %></p>
-        <p class="staple_button">
-          <%= render partial: 'posts/staple_button', locals: { post: post } %>
+
+        <p>
+          <span class="staple_button">
+            <%= render partial: 'posts/staple_button', locals: { post: post } %>
+          </span>
+          <span class="like_button">
+            <%= render partial: 'posts/like_button', locals: { post: post } %>
+          </span>
         </p>
+
       </div>
     </li>
   <% end %>

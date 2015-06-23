@@ -32,6 +32,10 @@ Rails.application.routes.draw do
 
   post 'me/unstaple/:post_id' => 'users#unstaple_post', as: :unstaple_post
 
+  post 'me/like/:post_id' => 'users#like_post', as: :like_post
+
+  post 'me/unlike/:post_id' => 'users#unlike_post', as: :unlike_post
+
   patch 'me' => 'users#update'
 
   post 'users' => 'users#create'

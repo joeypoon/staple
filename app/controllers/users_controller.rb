@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user.save
       login @user
       flash.now[:notice] = "Welcome to Staple, #{@user.username}!"
-      @posts = Post.all
+      @posts = Post.all.order('created_at desc')
     end
   end
 
@@ -54,6 +54,29 @@ class UsersController < ApplicationController
       flash.now[:alert] = 'Fail'
     end
     render 'users/staple_post'
+  end
+
+  def like_post
+    @post = Post.find_by id: params[:post_id]
+    current_user.liked << @post.id
+    @post.likes += 1
+    if current_user.save! && @post.save!
+      flash.now[:notice] = '💖'
+    else
+      flash.now[:alert] = '💔'
+    end
+  end
+
+  def unlike_post
+    @post = Post.find_by id: params[:post_id]
+    current_user.liked.delete @post.id
+    @post.likes -= 1
+    if current_user.save! && @post.save!
+      flash.now[:notice] = '💔'
+    else
+      flash.now[:alert] = 'Failed'
+    end
+    render 'users/like_post'
   end
 
   def my_stapled
