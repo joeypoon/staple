@@ -1,6 +1,6 @@
 <p>
   <ul class="list-inline post_tag_list" style="margin-left: 0;">
-    Tags:
+    <span class="glyphicon glyphicon-tags" aria-hidden="true" style="margin-right: .2em;"></span>
       <% post.tag_list.each do |tag| %>
         <li><%= link_to tag, posts_with_tag_path(tag: tag), remote: true %></li>
       <% end %>

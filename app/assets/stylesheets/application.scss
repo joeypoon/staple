@@ -2,9 +2,19 @@
 @import 'bootstrap';
 @import 'users';
 @import 'posts';
+@import "font-awesome";
 
-html a {
-  color: #18559F !important;
+html {
+
+  a {
+    color: #18559F !important;
+  }
+
+  nav {
+    span {
+      color: #18559F !important;
+    }
+  }
 }
 
 .margin-top {
@@ -25,4 +35,12 @@ body .main-alert {
 .navbar-fixed-bottom {
   border-left: 1px solid rgb(217, 220, 222);
   left: auto;
+}
+
+nav * {
+
+  ul li {
+    margin-left: .5em;
+    text-align: center;
+  }
 }

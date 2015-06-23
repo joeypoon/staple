@@ -13,11 +13,31 @@
   <div class="collapse navbar-collapse" id="navbar-collapse">
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
-        <li id='me-edit-link'><%= link_to "#{current_user.username}", me_edit_path, remote: true %></li>
-        <li><%= link_to "My Posts", my_posts_path, remote: true %></li>
-        <li><%= link_to "Stapled", my_stapled_path, remote: true %></li>
-        <li><%= link_to 'New Staple', new_staple_path, remote: true %></li>
-        <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+        <li id='me-edit-link' title="User Profile">
+          <%= link_to me_edit_path, remote: true do %>
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          <% end %>
+        </li>
+        <li title="My Posts">
+          <%= link_to my_posts_path, remote: true do %>
+            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+          <% end %>
+        </li>
+        <li title="Stapled Posts">
+          <%= link_to my_stapled_path, remote: true do %>
+            <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+          <% end %>
+        </li>
+        <li title="New Staple">
+          <%= link_to new_staple_path, remote: true do %>
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          <% end %>
+        </li>
+        <li title="Logout">
+          <%= link_to logout_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>
+          <% end %>
+        </li>
       <% else %>
         <li><%= link_to 'Sign Up', new_user_path, remote: true %></li>
         <li><%= link_to 'Login', login_path, remote: true %></li>

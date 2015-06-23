@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       login @user
+      flash.now[:notice] = "Welcome to Staple, #{@user.username}!"
       @posts = Post.all
     end
   end
