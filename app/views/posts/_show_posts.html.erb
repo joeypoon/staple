@@ -1,26 +1,7 @@
-<ul class="list-inline">
+<ul class="list-inline" id="posts-list">
   <% @posts.each do |post| %>
     <li class="list-item" id='post-<%= post.id %>'>
-      <div class='staple-display img-rounded well'>
-        <%= link_to staple_modal_path(post.id), remote: true do %>
-          <%= image_tag post.photo.url(:small), class: 'img-rounded img-responsive' %>
-        <% end %>
-        <p><%= link_to post.user.username, post.user, remote: true %> <%= time_ago_in_words post.created_at %> ago</p>
-
-        <%= render partial: 'posts/show_tag_list', locals: { post: post } %>
-
-        <p><%= post.notes %></p>
-
-        <p>
-          <span class="staple_button">
-            <%= render partial: 'posts/staple_button', locals: { post: post } %>
-          </span>
-          <span class="like_button">
-            <%= render partial: 'posts/like_button', locals: { post: post } %>
-          </span>
-        </p>
-
-      </div>
+      <%= render partial: 'posts/post', locals: { post: post } %>
     </li>
   <% end %>
 </ul>
