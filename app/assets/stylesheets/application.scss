@@ -4,7 +4,11 @@
 @import 'posts';
 @import "font-awesome";
 
-html {
+.container-fluid {
+  padding: 0;
+}
+
+html body {
 
   a {
     color: #18559F !important;
@@ -42,5 +46,21 @@ nav * {
   ul li {
     margin-left: .5em;
     text-align: center;
+  }
+}
+
+body #before-page {
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .tint {
+    background-color: rgba(52, 73, 94, 0.3);
+  }
+
+  h2 {
+    color: #D35400;
+    font-size: 4.5em;
+    letter-spacing: .17em;
+    font-family: Impact, Charcoal, sans-serif;
   }
 }

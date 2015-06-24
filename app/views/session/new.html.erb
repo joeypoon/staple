@@ -1,0 +1,21 @@
+<div id="before-page" style="background-image: url(<%= image_url('background.jpg') %>);">
+
+  <div class="tint">
+
+    <h2 class="text-center" style="margin-bottom: .5em;">Staple</h2>
+
+    <div class="text-center">
+
+      <%= link_to new_user_path, remote: true, style: 'margin-left: -1em;' do %>
+        <button type="button" name="button" class="btn btn-success btn-lg">Sign Up</button>
+      <% end %>
+
+      <%= link_to login_path, remote: true, style: 'margin-left: 4em;' do %>
+        <button type="button" name="button" class="btn btn-primary btn-lg">Login</button>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>

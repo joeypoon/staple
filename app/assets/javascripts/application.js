@@ -17,3 +17,12 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery.infinitescroll
+
+$(document).ready(function() {
+
+  var height = $(window).height()
+  $('#before-page').css('height', height);
+  $('#before-page .tint').css('height', height);
+  $('#before-page .tint').css('padding-top', height/4);
+
+});

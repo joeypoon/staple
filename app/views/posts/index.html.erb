@@ -1,7 +1,19 @@
-<div id="content">
-  <%= render 'posts/show_posts' %>
-</div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <%= render 'layouts/nav' %>
+</nav>
 
-<div id="paginate-posts">
-  <%= render 'posts/paginate_posts' %>
+<div class="container">
+
+  <div class="main-alert">
+    <%= render 'layouts/alerts' %>
+  </div>
+
+  <div id="content">
+    <%= render 'posts/show_posts' %>
+  </div>
+
+  <nav class="navbar navbar-default navbar-fixed-bottom col-xs-4 col-sm-2 col-lg-1">
+    <%= render 'layouts/bottom_nav' %>
+  </nav>
+
 </div>

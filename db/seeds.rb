@@ -15,7 +15,7 @@
 
 end
 
-36.times do
+24.times do
 
   tags = ['funny', 'motivational', 'weird', 'recipe', 'smart', 'facts']
 

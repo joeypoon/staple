@@ -1,5 +1,11 @@
 class PostsController < ApplicationController
 
+  before_action do
+    unless current_user
+      redirect_to login_path
+    end
+  end
+
   def index
     new_post
     set_posts
@@ -49,7 +55,7 @@ class PostsController < ApplicationController
     end
 
     def set_posts
-      @posts = Post.all.order('created_at desc').page(params[:page])
+      @posts = Post.all.order('created_at desc')
     end
 
     def post_params
