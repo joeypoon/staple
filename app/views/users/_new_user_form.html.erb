@@ -1,10 +1,13 @@
-<%= simple_form_for @user, remote: true do |f| %>
+<div class="well">
 
-  <%= f.input :username %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
-  <%= f.submit 'Signup', class: 'btn btn-primary btn-block' %>
-  <p>Have an account? <%= link_to 'Login', login_path, remote: true %></p>
+  <%= simple_form_for @user do |f| %>
 
-<% end %>
+    <%= f.input :username %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <%= f.submit 'Signup', class: 'btn btn-primary btn-block' %>
+
+  <% end %>
+
+</div>

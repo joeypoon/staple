@@ -3,17 +3,17 @@ class SessionController < ApplicationController
   before_action :new_post
 
   def new
+    @user = User.new
   end
 
   def create
     @user = User.find_by email: session_params[:email]
     if @user && @user.authenticate(session_params[:password])
       login @user
-      flash.now[:notice] = "Hi #{@user.username}"
       @posts = Post.all
+      redirect_to root_path, notice: "Welcome back #{@user.username}"
     else
-      flash.now[:alert] = 'Invalid email/password combination'
-      render 'session/fail_login'
+      redirect_to login_path, alert: 'Invalid email/password combination'
     end
   end
 

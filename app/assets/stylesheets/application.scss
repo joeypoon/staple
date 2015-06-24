@@ -55,6 +55,14 @@ body #before-page {
 
   .tint {
     background-color: rgba(52, 73, 94, 0.3);
+
+    #signup-section {
+
+      .signup-forms {
+        display:none;
+        margin-top: 2em;
+      }
+    }
   }
 
   h2 {
